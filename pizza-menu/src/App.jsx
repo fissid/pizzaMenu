@@ -4,7 +4,7 @@ import Footer from "./components/Footer.jsx";
 import Menu from "./components/Menu.jsx";
 export default function App() {
   return (
-    <div>
+    <div className="container">
       <Header />
       <Menu />
       <Footer />
