@@ -5,7 +5,7 @@ export default function Menu() {
     <main className="menu">
       <h2>Our Menu</h2>
       {data.map((each) => {
-        return <Pizza key={each.name} ing={each.ingredients} img={each.photoName} name={each.name} />;
+        return <Pizza key={each.name} ing={each.ingredients} img={each.photoName} name={each.name} price={Number(each.price)} />;
       })}
     </main>
   );
