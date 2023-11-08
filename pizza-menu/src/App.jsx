@@ -1,9 +1,13 @@
-import Pizza from "./components/Pizza";
-import data from "./data.js";
 import "./index.css";
+import Header from "./components/Header.jsx";
+import Footer from "./components/Footer.jsx";
+import Menu from "./components/Menu.jsx";
 export default function App() {
-  console.log(data);
-  return data.map((each) => {
-    return <Pizza ing={each.ingredients} img={each.photoName} name={each.name}></Pizza>;
-  });
+  return (
+    <div>
+      <Header />
+      <Menu />
+      <Footer />
+    </div>
+  );
 }
