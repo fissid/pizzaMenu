@@ -1,20 +1,28 @@
 import React, { useState } from "react";
 export default function Counter() {
   const [myDate, setMyDate] = useState(new Date());
-  const [stepCount, setStepCount] = useState(1);
+  const [step, setStep] = useState(1);
+  const [count, setCount] = useState(1);
+  function stepVolume(flag) {
+    if (!flag && step > 0) {
+      setStep((prev) => (prev -= 1));
+    } else {
+      setStep((prev) => (prev += 1));
+    }
+  }
   return (
     <div className="counter">
       <div className="step">
-        <button>-</button>
+        <button onClick={() => stepVolume(false)}>-</button>
         <p>
-          Step: <span>{stepCount}</span>
+          Step: <span>{step}</span>
         </p>
-        <button>+</button>
+        <button onClick={() => stepVolume(true)}>+</button>
       </div>
       <div className="step count">
         <button>-</button>
         <p>
-          Count: <span>{stepCount}</span>
+          Count: <span>{count}</span>
         </p>
         <button>+</button>
       </div>
