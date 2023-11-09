@@ -11,11 +11,6 @@ export default function Menu() {
           <ul className="pizzas">
             {data.map((each) => {
               return <Pizza pizzaInfo={each} />;
-              //   if (each.soldOut) {
-              //     return;
-              //   } else {
-              //     return <Pizza pizzaInfo={each} />;
-              //   }
             })}
           </ul>
         </>
