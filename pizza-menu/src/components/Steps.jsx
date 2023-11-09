@@ -18,8 +18,9 @@ const steps = [
 ];
 export default function Steps() {
   const [selected, setSelected] = useState(0);
+  const [displaying, setDisplaying] = useState(true);
   function clickHandler(e, goTo) {
-    if (goTo > 0) {
+    if (goTo) {
       setSelected((prev) => {
         if (prev >= steps.length - 1) return prev;
         return (prev += 1);
@@ -33,8 +34,10 @@ export default function Steps() {
   }
   return (
     <div style={{ position: "relative" }}>
-      <div className="close">x</div>
-      <div className="steps">
+      <div className="close" onClick={() => setDisplaying((prev) => !prev)}>
+        x
+      </div>
+      <div className="steps" style={displaying ? { display: "block" } : { display: "none" }}>
         <div className="numbers">
           {steps.map((step) => {
             return (
@@ -50,14 +53,14 @@ export default function Steps() {
         <div className="buttons">
           <button
             onClick={(e) => {
-              clickHandler(e, -1);
+              clickHandler(e, false);
             }}
           >
             <span>Previus</span>
           </button>
           <button
             onClick={(e) => {
-              clickHandler(e, 1);
+              clickHandler(e, true);
             }}
           >
             <span>Next</span>
