@@ -7,7 +7,7 @@ export default function Counter() {
     if (!flag && step > 0) {
       setStep((prev) => (prev -= 1));
     } else {
-      setStep((prev) => (prev += 1));
+      setStep((prev = d > (prev += 1)));
     }
   }
   return (
