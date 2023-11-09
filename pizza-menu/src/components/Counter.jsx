@@ -7,7 +7,14 @@ export default function Counter() {
     if (!flag && step > 0) {
       setStep((prev) => (prev -= 1));
     } else {
-      setStep((prev = d > (prev += 1)));
+      setStep((prev) => (prev += 1));
+    }
+  }
+  function stepCounter(flag) {
+    if (!flag && count > 0) {
+      setCount((prev) => (prev -= 1));
+    } else {
+      setCount((prev) => (prev += 1));
     }
   }
   return (
@@ -20,11 +27,11 @@ export default function Counter() {
         <button onClick={() => stepVolume(true)}>+</button>
       </div>
       <div className="step count">
-        <button>-</button>
+        <button onClick={() => stepCounter(false)}>-</button>
         <p>
           Count: <span>{count}</span>
         </p>
-        <button>+</button>
+        <button onClick={() => stepCounter(true)}>+</button>
       </div>
       <p>Today is {new Intl.DateTimeFormat(navigator.language, { weekday: "short", month: "short", day: "2-digit", year: "numeric" }).format(myDate)}</p>
     </div>
