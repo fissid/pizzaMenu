@@ -271,6 +271,7 @@ h3 {
 }
 /* ################################# */
 .counter {
+  text-align: center;
   font-size: 2rem;
 }
 .step {

@@ -1,24 +1,24 @@
 import React, { useState } from "react";
 export default function Counter() {
   const [myDate, setMyDate] = useState(new Date());
-  console.log(myDate);
+  const [stepCount, setStepCount] = useState(1);
   return (
     <div className="counter">
       <div className="step">
         <button>-</button>
         <p>
-          Step: <span>1</span>
+          Step: <span>{stepCount}</span>
         </p>
         <button>+</button>
       </div>
       <div className="step count">
         <button>-</button>
         <p>
-          Count: <span>1</span>
+          Count: <span>{stepCount}</span>
         </p>
         <button>+</button>
       </div>
-      <p>Today is {}</p>
+      <p>Today is {new Intl.DateTimeFormat(navigator.language, { weekday: "short", month: "short", day: "2-digit", year: "numeric" }).format(myDate)}</p>
     </div>
   );
 }
