@@ -32,8 +32,8 @@ export default function Steps() {
     }
   }
   return (
-    <>
-      <div className="close">X</div>
+    <div style={{ position: "relative" }}>
+      <div className="close">x</div>
       <div className="steps">
         <div className="numbers">
           {steps.map((step) => {
@@ -64,6 +64,6 @@ export default function Steps() {
           </button>
         </div>
       </div>
-    </>
+    </div>
   );
 }
