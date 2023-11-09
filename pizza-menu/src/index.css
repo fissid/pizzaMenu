@@ -64,11 +64,11 @@ body {
 }
 
 .header h1::before {
-  left: 0;
+  left: -10rem;
 }
 
 .header h1::after {
-  right: 0;
+  right: -10rem;
 }
 
 /* *************** */
