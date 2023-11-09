@@ -1,3 +1,4 @@
+import Order from "./Order";
 export default function Footer() {
   const hours = {
     open: 12,
@@ -5,12 +6,5 @@ export default function Footer() {
   };
   const currentHour = new Date().getHours();
   const isOpen = currentHour >= hours.open && currentHour <= hours.close;
-  return (
-    <footer className="footer">
-      <div className="order">
-        {isOpen ? <p>{`We are open until ${hours.close}:00. Come visit us or order online`}</p> : <p>{"Sorry! we are closed."}</p>}
-        <button className="btn">Order</button>
-      </div>
-    </footer>
-  );
+  return <footer className="footer">{isOpen ? <Order hours={hours} /> : <p>{`Sorry! we are closed. We're happy to welcome you between ${hours.open}:00 and ${hours.close}:00.`}</p>}</footer>;
 }

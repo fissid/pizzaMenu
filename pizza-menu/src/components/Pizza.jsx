@@ -1,11 +1,11 @@
-export default function Pizza({ img, name, ing, price }) {
+export default function Pizza(props) {
   return (
-    <li className="pizza">
-      <img src={img} alt={name} />
+    <li className={`pizza ${props.pizzaInfo.soldOut && "sold-out"}`}>
+      <img src={props.pizzaInfo.photoName} alt={props.pizzaInfo.name} />
       <div>
-        <h3>{name}</h3>
-        <p>{ing}</p>
-        <span>{price}</span>
+        <h3>{props.pizzaInfo.name}</h3>
+        <p>{props.pizzaInfo.ingredients}</p>
+        <span>{props.pizzaInfo.soldOut ? "Sold Out" : props.pizzaInfo.price}</span>
       </div>
     </li>
   );
