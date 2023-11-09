@@ -10,7 +10,7 @@ export default function Menu() {
           <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. In veritatis animi hic temporibus itaque? Esse ipsam, deserunt, molestiae, libero modi minus aut recusandae omnis facilis neque dolorem sequi praesentium quo.</p>
           <ul className="pizzas">
             {data.map((each) => {
-              return <Pizza pizzaInfo={each} />;
+              return <Pizza key={each.name} pizzaInfo={each} />;
             })}
           </ul>
         </>
