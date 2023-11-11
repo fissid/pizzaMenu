@@ -13,7 +13,7 @@ export default function Counter() {
         </p>
         <button onClick={() => setStep((prev) => prev + 1)}>+</button>
       </div>
-      <div className="">
+      <div className="step">
         <button onClick={() => setCount((prev) => prev - 1)}>-</button>
         <p>
           Count: <span>{count * step}</span>
