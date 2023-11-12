@@ -6,7 +6,10 @@ export default function Counter2() {
   today.setDate(today.getDate() + count * step);
   return (
     <div className="counter">
-      <div className="step">{/* <progress></progress> */}</div>
+      <div className="step">
+        <input type="range" min="0" max="10" onChange={(e) => setStep(e.target.value)}></input>
+        <p>{step}</p>
+      </div>
       <div className="step">
         <button onClick={() => setCount((prev) => prev - 1)}>-</button>
         <p>
