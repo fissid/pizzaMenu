@@ -13,7 +13,6 @@ export default function Counter2() {
       <div className="step">
         <button onClick={() => setCount((prev) => prev - 1)}>-</button>
         <input type="text" value={count} onChange={(e) => setCount(Number(e.target.value))} />
-
         <button onClick={() => setCount((prev) => prev + 1)}>+</button>
       </div>
       <p>
