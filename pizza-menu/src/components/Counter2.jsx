@@ -19,15 +19,17 @@ export default function Counter2() {
         <span>{count === 0 ? "Today is " : count > 0 ? `${count} days from today is ` : `${Math.abs(count)} days ago was `}</span>
         <span>{today.toDateString()}</span>
       </p>
-      <button
-        type="reset"
-        onClick={() => {
-          setCount(0);
-          setStep(1);
-        }}
-      >
-        Reset
-      </button>
+      {count !== 0 || step !== 1 ? (
+        <button
+          type="reset"
+          onClick={() => {
+            setCount(0);
+            setStep(1);
+          }}
+        >
+          Reset
+        </button>
+      ) : null}
     </div>
   );
 }
