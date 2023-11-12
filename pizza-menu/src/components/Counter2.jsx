@@ -7,14 +7,12 @@ export default function Counter2() {
   return (
     <div className="counter">
       <div className="step">
-        <input type="range" min="0" max="10" onChange={(e) => setStep(e.target.value)}></input>
+        <input type="range" min="0" max="10" value={step} onChange={(e) => setStep(e.target.value)}></input>
         <p>{step}</p>
       </div>
       <div className="step">
         <button onClick={() => setCount((prev) => prev - 1)}>-</button>
-        <p>
-          Count: <span>{count * step}</span>
-        </p>
+        <input type="text" placeholder={count * step} />
         <button onClick={() => setCount((prev) => prev + 1)}>+</button>
       </div>
       <p>
