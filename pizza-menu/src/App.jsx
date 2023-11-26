@@ -5,6 +5,7 @@ import Menu from "./components/Menu.jsx";
 import Steps from "./components/Steps.jsx";
 import Counter from "./components/Counter.jsx";
 import Counter2 from "./components/Counter2.jsx";
+import TipCalc from "./components/TipCalc.jsx";
 export default function App() {
   return (
     <div className="container">
@@ -14,6 +15,7 @@ export default function App() {
       <Steps />
       <Counter />
       <Counter2 />
+      <TipCalc />
     </div>
   );
 }
